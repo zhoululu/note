@@ -1,5 +1,8 @@
 export default {
   title: '笔记',
   description: '笔记',
-  base: '/note/'
+  base: '/note/',
+  themeConfig: {
+    outline: 'deep'
+  }
 }
