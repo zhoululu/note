@@ -313,5 +313,32 @@ text-#ddd ==> color: #ddd
 ##### 其它预设
 * 请浏览[unocss github仓库](https://github.com/unocss/unocss#Presets)
 
+### unocss与我们项目的结合
+unocss里面的规则都是px转换成rem，但是我们的项目里面都是使用的px，然后再使用postcss-px-to-viewport-8-plugin插件转换为vw单位。
+所以我们需要一个预设，能够把rem转为为px，而[@unocss/preset-rem-to-px](https://github.com/unocss/unocss/tree/main/packages/preset-rem-to-px)正好满足我们的需求
+```bash
+pnpm install @unocss/preset-rem-to-px -D
+```
+```typescript
+  import presetRemToPx from '@unocss/preset-rem-to-px' // [!code ++]
+
+  plugins: [vue(), unocss({
+    presets: [presetUno(), presetAttributify()] // [!code --]
+    presets: [presetUno(), presetAttributify(), presetRemToPx({ // [!code ++]
+      baseFontSize: 4  // [!code ++]
+    })] // [!code ++]
+  })]
+```
+> 为什么需要把baseFontSize写为4？
+>
+> 那是因为浏览器默认1rem=16px, 以p-4举例，应该转换为padding: 1rem, 如果不传入baseFontSize： 4
+>
+> 那么转换结果就是p-4 ==> 16px。这样不利于记忆，如果p-4 ==> 4px就好了
+>
+> 假如1rem 等于 4px， 就能实现上面的目标，那如何实现呢？
+>
+>在html文档里面，根节点html标签设置font-size: 4px，就能实现
+>
+> 类似的在presetRemToPx预设里面，baseFontSize传入4就可以了
 ## 其它
 unocss库作者写的文章：[重新构想原子化 CSS](https://antfu.me/posts/reimagine-atomic-css-zh)
