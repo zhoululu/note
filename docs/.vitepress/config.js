@@ -6,7 +6,13 @@ export default defineConfig({
   themeConfig: {
     outline: 'deep',
     nav: [
-      { text: 'web前端', link: '/web/' }
+      { text: 'web前端', link: '/web/' },
+      { text: '源码阅读',  items: [
+        {
+          text: 'element-plus',
+          link: '/source-code/element-plus/'
+        }
+      ]}
     ],
     sidebar: {
       '/web/': [
@@ -14,6 +20,14 @@ export default defineConfig({
           text: 'web前端',
           items: [
             { text: 'unocss基础', link: '/web/unocssStudy' }
+          ]
+        }
+      ],
+      '/source-code/element-plus/': [
+        {
+          text: 'element-plus',
+          items: [
+            { text: 'divider', link: '/source-code/element-plus/divider' }
           ]
         }
       ]
