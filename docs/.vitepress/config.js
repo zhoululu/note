@@ -19,7 +19,8 @@ export default defineConfig({
         {
           text: 'web前端',
           items: [
-            { text: 'unocss基础', link: '/web/unocssStudy' }
+            { text: 'unocss基础', link: '/web/unocssStudy' },
+            { text: 'box-shadow', link: '/web/box-shadow' }
           ]
         }
       ],
