@@ -4,6 +4,9 @@ export default defineConfig({
   description: '笔记',
   base: '/note/',
   themeConfig: {
+    socialLinks: [
+      { icon: 'github', link: 'https://github.com/zhoululu/note' },
+    ],
     outline: 'deep',
     nav: [
       { text: 'web前端', link: '/web/' },
