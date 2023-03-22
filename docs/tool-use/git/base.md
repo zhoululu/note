@@ -10,3 +10,6 @@
 
 * 执行 git push origin 分支名 --force
 
+## git commit后撤回
+
+git reset --soft HEAD^
