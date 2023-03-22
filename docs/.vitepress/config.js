@@ -15,7 +15,15 @@ export default defineConfig({
           text: 'element-plus',
           link: '/source-code/element-plus/'
         }
-      ]}
+      ]},
+      {
+        text: '工具使用', items: [
+          {
+            text: 'git',
+            link: '/tool-use/git/'
+          }
+        ]
+      }
     ],
     sidebar: {
       '/web/': [
@@ -32,6 +40,14 @@ export default defineConfig({
           text: 'element-plus',
           items: [
             { text: 'divider', link: '/source-code/element-plus/divider' }
+          ]
+        }
+      ],
+      '/tool-use/git/': [
+        {
+          text: 'git',
+          items: [
+            { text: '基本使用', link: '/tool-use/git/base' }
           ]
         }
       ]
